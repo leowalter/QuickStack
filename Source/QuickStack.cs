@@ -117,7 +117,8 @@ internal class QuickStack
         {
             return (_tileEntity.GetTileEntityType() == TileEntityType.Loot ||
                 _tileEntity.GetTileEntityType() == TileEntityType.SecureLoot ||
-                _tileEntity.GetTileEntityType() == TileEntityType.SecureLootSigned);
+                _tileEntity.GetTileEntityType() == TileEntityType.SecureLootSigned ||
+                _tileEntity.lootListName == "cupboard") && _tileEntity.lootListName != "playerGunSafe" && _tileEntity.GetType().ToString() != "TileEntityClaimAutoRepair"; ;
         }
         catch (Exception e)
         {

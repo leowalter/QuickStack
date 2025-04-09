@@ -2,7 +2,8 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+	<SDTD_DIR Condition=" '$(SDTD_DIR)' == '' ">C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die</SDTD_DIR>
+	<Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EDB270AE-1949-4DCF-A5AB-558E753E8A3D}</ProjectGuid>
     <OutputType>Library</OutputType>
