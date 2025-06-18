@@ -86,11 +86,12 @@ class NetPackageDoQuickStack : NetPackageInvManageAction
         try
         {
             base.write(_writer);
-            _writer.Write((byte)type);
+            _writer.Write(_value: (byte)type);
         }
         catch (Exception e)
         {
             QuickStack.printExceptionInfo(e);
         }
     }
+
 }

@@ -30,9 +30,9 @@ public abstract class NetPackageInvManageAction : NetPackage
     {
         try
         {
-            _writer.Write((sbyte)ivec3.x);
-            _writer.Write((sbyte)ivec3.y);
-            _writer.Write((sbyte)ivec3.z);
+            _writer.Write(_value: (sbyte)ivec3.x);
+            _writer.Write(_value: (sbyte)ivec3.y);
+            _writer.Write(_value: (sbyte)ivec3.z);
         }
         catch (Exception e)
         {
@@ -63,9 +63,9 @@ public abstract class NetPackageInvManageAction : NetPackage
     {
         try
         {
-            _writer.Write(ivec3.x);
-            _writer.Write(ivec3.y);
-            _writer.Write(ivec3.z);
+            _writer.Write(_value: ivec3.x);
+            _writer.Write(_value: ivec3.y);
+            _writer.Write(_value: ivec3.z);
         }
         catch (Exception e)
         {
@@ -134,11 +134,11 @@ public abstract class NetPackageInvManageAction : NetPackage
 
             if (containerEntities == null)
             {
-                _writer.Write((ushort)0);
+                _writer.Write(_value: (ushort)0);
                 return;
             }
 
-            _writer.Write((ushort)containerEntities.Count);
+            _writer.Write(_value: (ushort)containerEntities.Count);
             foreach (var id in containerEntities)
             {
                 WriteOptimized(_writer, id);

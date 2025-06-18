@@ -2,8 +2,8 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-	<SDTD_DIR Condition=" '$(SDTD_DIR)' == '' ">C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die</SDTD_DIR>
-	<Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <SDTD_DIR Condition=" '$(SDTD_DIR)' == '' ">C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die</SDTD_DIR>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EDB270AE-1949-4DCF-A5AB-558E753E8A3D}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-	<SDTD_DIR>$(SDTD_DIR)</SDTD_DIR>
+    <SDTD_DIR>$(SDTD_DIR)</SDTD_DIR>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,13 +25,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>portable</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>.\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>false</DebugSymbols>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,7 +63,7 @@
       <HintPath>$(SDTD_DIR)\7DaysToDie_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="TfpHarmony">
+    <Reference Include="TfpHarmony">
       <HintPath>$(SDTD_DIR)\Mods\0_TFP_Harmony\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -79,12 +80,24 @@
     <Compile Include="Source\Init.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\Localization.txt" />
-    <Content Include="Config\XUi\windows.xml" />
-    <Content Include="ModInfo.xml" />
-    <Content Include="QuickStackConfig.xml" />
-    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_quickrestock.png" />
-    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_quickstack.png" />
+    <Content Include="Config\Localization.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\XUi\windows.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ModInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QuickStackConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_quickrestock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UIAtlases\UIAtlas\ui_game_symbol_quickstack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

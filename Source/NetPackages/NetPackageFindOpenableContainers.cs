@@ -99,8 +99,8 @@ class NetPackageFindOpenableContainers : NetPackage
         try
         {
             base.write(_writer);
-            _writer.Write(playerEntityId);
-            _writer.Write((byte)type);
+            _writer.Write(_value: playerEntityId);
+            _writer.Write(_value: (byte)type);
         }
         catch (Exception e)
         {
